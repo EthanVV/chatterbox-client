@@ -19,10 +19,11 @@
         window.location.search = newSearch;
       }
     </script>
+
     <!-- your scripts -->
-    <script src="env/config.js"></script>
+    <script src="scripts/config.js"></script>
     <script src="scripts/app.js"></script>
-    
+    <script> $(document).ready(app.init);</script>
   </head>
   <body>
     <div id="main">
@@ -30,7 +31,7 @@
       <!-- Your HTML goes here! -->
     </div>
 
-    <div class="spinner"><img src="../client/images/spiffygif_46x46.gif"></div>
+    <!-- <div class="spinner"><img src="../client/images/spiffygif_46x46.gif"></div> -->
     <div id="rooms">
       Room:
       <select id="roomSelect">
@@ -43,6 +44,5 @@
     </form>
 
     <div id="chats">test</div>
-    <script> app.init() </script>
   </body>
 </html>
