@@ -50,7 +50,7 @@ class App {
     $('#chats').append('<blink>' + message + '</blink>');
   }
 
-  enderRoom(room) {
+  renderRoom(room) {
     $('#roomSelect').append('<p>' + room + '</p>');
   }
 }
