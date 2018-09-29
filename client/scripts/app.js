@@ -1,14 +1,16 @@
 //YOUR CODE HERE:
 class App {
+  
   constructor () {
-
+    this.server = 'http://parse.atx.hackreactor.com/chatterbox/classes/messages';
   }
   
   init() {
-    fetch();
+    this.fetch();
   }
 
   send(message) {
+    console.log('sending...')
     $.ajax({
       // This is the url you should use to communicate with the parse API server.
       url: 'http://parse.atx.hackreactor.com/chatterbox/classes/messages',
@@ -26,12 +28,14 @@ class App {
   }
 
   fetch() {
+    console.log('fetchin...');
     $.ajax({
       // This is the url you should use to communicate with the parse API server.
-      url: undefined,
+      // url:  app.server,
+      url: 'http://parse.atx.hackreactor.com/chatterbox/classes/messages',   
       type: 'GET',
-      data: JSON.stringify(message),
       contentType: 'application/json',
+      // data: null,
       success: function (data) {
         console.log('chatterbox: Message received', data);
       },
@@ -42,16 +46,15 @@ class App {
     });
   }
 
+
   clearMessages() {
     $('#chats').empty();
   }
 
   handleUsernameClick() {
-
   }
 
   handleSubmit() {
-    debugger
   }
 
   renderMessage(message) {
