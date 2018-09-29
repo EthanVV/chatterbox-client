@@ -35,5 +35,17 @@ let app = {
         console.error('chatterbox: Failed to receive message', data);
       }
     });
+  },
+
+  clearMessages: function() {
+    $('#chats').empty();
+  },
+
+  renderMessage: function(message) {
+    $('#chats').append('<blink>' + message + '</blink>');
+  },
+
+  renderRoom: function(room) {
+    $('#roomSelect').append('<p>' + room + '</p>');
   }
 };
