@@ -5,7 +5,7 @@ class App {
   }
   
   init() {
-
+    fetch();
   }
 
   send(message) {
@@ -33,7 +33,7 @@ class App {
       data: JSON.stringify(message),
       contentType: 'application/json',
       success: function (data) {
-        console.log('chatterbox: Message received');
+        console.log('chatterbox: Message received', data);
       },
       error: function (data) {
         // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
@@ -46,8 +46,20 @@ class App {
     $('#chats').empty();
   }
 
+  handleUsernameClick() {
+
+  }
+
+  handleSubmit() {
+    debugger
+  }
+
   renderMessage(message) {
-    $('#chats').append('<blink>' + message + '</blink>');
+    $('#chats').append('<div class = "chat username"> ' 
+      + '<div class="username" onclick="app.handleUsernameClick()">' + message.username + '</div>'
+      + '<div>' + message.text + '</div>'
+      + '<div>' + message.roomname + '</div>'
+      + '</div>');
   }
 
   renderRoom(room) {
