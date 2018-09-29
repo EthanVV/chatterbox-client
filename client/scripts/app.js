@@ -1,9 +1,14 @@
 //YOUR CODE HERE:
-let app = {
-  init: function() {
+class App {
+  constructor () {
 
-  },
-  send: function(message) {
+  }
+  
+  init() {
+
+  }
+
+  send(message) {
     $.ajax({
       // This is the url you should use to communicate with the parse API server.
       url: 'http://parse.atx.hackreactor.com/chatterbox/classes/messages',
@@ -18,9 +23,9 @@ let app = {
         console.error('chatterbox: Failed to send message', data);
       }
     });
-  },
+  }
 
-  fetch: function() {
+  fetch() {
     $.ajax({
       // This is the url you should use to communicate with the parse API server.
       url: undefined,
@@ -35,17 +40,19 @@ let app = {
         console.error('chatterbox: Failed to receive message', data);
       }
     });
-  },
+  }
 
-  clearMessages: function() {
+  clearMessages() {
     $('#chats').empty();
-  },
+  }
 
-  renderMessage: function(message) {
+  renderMessage(message) {
     $('#chats').append('<blink>' + message + '</blink>');
-  },
+  }
 
-  renderRoom: function(room) {
+  enderRoom(room) {
     $('#roomSelect').append('<p>' + room + '</p>');
   }
-};
+}
+
+var app = new App();
